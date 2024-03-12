@@ -8,20 +8,19 @@ pipeline {
                 sh 'ls'
                 build 'PES2UG21CS492-1'
                 sh 'g++ -o obj main/hello.cpp'
-                ERROR
             }
         }
 
         stage('Test') {
             steps {
-                // Print the output of the compiled .cpp file
-                sh './obj'
+                // Intentionally introduce an error in the Test stage
+                sh 'exit 1'
             }
         }
 
         stage('Deploy') {
             steps {
-              echo 'deploy'
+                echo 'deploy'
             }
         }
     }
