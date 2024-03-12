@@ -8,6 +8,7 @@ pipeline {
                 sh 'ls'
                 build 'PES2UG21CS492-1'
                 sh 'g++ -o obj main/hello.cpp'
+                ERROR
             }
         }
 
